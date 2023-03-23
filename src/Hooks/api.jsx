@@ -107,13 +107,13 @@ export function COMMENT_POST(id, body, token) {
 }
 
 // Deleta uma foto de acordo com o ID
-export function PHOTO_DELETE(id, token) {
+export function PHOTO_DELETE(id) {
   return {
     url: `${API_URL}/api/photo/${id}`,
     options: {
       method: 'DELETE',
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
       },
     },
   };
